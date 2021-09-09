@@ -31,6 +31,7 @@ public class GameFlowManager : MonoBehaviour
     PlayerCharacterController m_Player;
     NotificationHUDManager m_NotificationHUDManager;
     ObjectiveManager m_ObjectiveManager;
+    CountdownTimer m_CountdownTimer;
     float m_TimeLoadEndGameScene;
     string m_SceneToLoad;
 
@@ -41,6 +42,9 @@ public class GameFlowManager : MonoBehaviour
 
         m_ObjectiveManager = FindObjectOfType<ObjectiveManager>();
 		DebugUtility.HandleErrorIfNullFindObject<ObjectiveManager, GameFlowManager>(m_ObjectiveManager, this);
+
+        m_CountdownTimer = FindObjectOfType<CountdownTimer>();
+        DebugUtility.HandleErrorIfNullFindObject<CountdownTimer, GameFlowManager>(m_CountdownTimer, this);
 
         AudioUtility.SetMasterVolume(1);
     }
@@ -65,9 +69,9 @@ public class GameFlowManager : MonoBehaviour
         {
             if (m_ObjectiveManager.AreAllObjectivesCompleted())
                 EndGame(true);
-
-            // Test if player died
-            if (m_Player.isDead)
+            else if (m_CountdownTimer.outOfTime)
+                EndGame(false);
+            else if (m_Player.isDead) // Test if player died
                 EndGame(false);
         }
     }

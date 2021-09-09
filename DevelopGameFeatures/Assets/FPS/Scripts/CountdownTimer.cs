@@ -7,6 +7,7 @@ public class CountdownTimer : MonoBehaviour
 {
     float currentTime = 0f;
     float initialTime = 10f; // TODO take as parameter
+    public bool outOfTime = false;
 
     [SerializeField] Text countdownText;
 
@@ -26,6 +27,7 @@ public class CountdownTimer : MonoBehaviour
         {
             currentTime = 0;
             // TODO set flag to end current time limited stage
+            outOfTime = true;
         }
     }
 }

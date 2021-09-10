@@ -882,6 +882,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Id: 1e93ef1d-eb79-489d-97cd-b5db7125e785
+--- !u!114 &1295604505 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 9087143436424816424, guid: 25a1b0efadb966e44889fce712c8ff8d,
+    type: 3}
+  m_PrefabInstance: {fileID: 1295604495}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1295604496}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3de939d976a5bb0419ccd8dbd0b6836b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1342970745 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5963937743390997973, guid: 9b7d8a511d161be4d9c32aae2e937170,
@@ -1424,6 +1436,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8ce1d9efdb2a46a5b4d5cfeebf14864, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  outOfTime: 0
   countdownText: {fileID: 1838402742}
 --- !u!114 &1838402742
 MonoBehaviour:
@@ -1840,6 +1853,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemiesToAssign:
   - {fileID: 137567736}
+  - {fileID: 1295604505}
   pathNodes:
   - {fileID: 2729281212889745563}
   - {fileID: 2729281214224612182}
